@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:util="http://java.sun.com/jsf/composite/util">
+
+<h:head>
+	<title>LOGIN - COM IMAGEM</title>
+</h:head>
+
+<h:body>
+		<util:loginComponent namePrompt="Nome do pião" 
+		passwordPrompt="Senha do pião" loginButtonText="Butão de login"
+		loginAction="#{userBean.login}" nameValue="#{userBean.name}" passwordValue="#{userBean.password}"
+		image="#{resource['images:back.png']}" id="loginComp">
+			<f:validateLength maximum="10" for="inputs"/>
+			<f:validateLength minimum="4" for="inputs"/>
+		</util:loginComponent>
+		
+		<h:message for="loginComp"/>
+		<h:message for="inputs"/>
+</h:body>
+</html>

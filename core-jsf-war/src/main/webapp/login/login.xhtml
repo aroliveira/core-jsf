@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:corejsf="http://corejsf.com/facelets">
+   <head><title>IGNORED</title></head>
+   <body>
+      <ui:composition template="../templates/masterLayout.xhtml">
+            
+         <ui:define name="windowTitle">
+            #{planetMsg.loginTitle}
+         </ui:define>
+
+         <ui:define name="heading">
+            <ui:include src="header.xhtml"/>
+         </ui:define>
+
+         <ui:define name="sidebarLeft">
+            <ui:include src="sidebarLeft.xhtml"/>
+         </ui:define>
+
+         <ui:define name="content">
+            <h:form>
+               <h:panelGrid columns="2">
+                  #{planetMsg.namePrompt}
+                  <h:inputText id="name" value="#{user.name}"/>
+                  #{planetMsg.passwordPrompt}
+                  <h:inputSecret id="password" value="#{user.password}"/>
+                  <h:inputText id="opa" label="Label" value="#{user.vDouble}"/>
+                  <h:message for="opa" errorClass="header"/>
+               </h:panelGrid>
+               <p>
+                  <h:commandButton value="#{planetMsg.loginButtonText}"
+                                   action="planetarium"/>
+               </p>               
+            </h:form>
+         </ui:define>
+         
+         
+         
+         
+      </ui:composition>
+   </body>
+</html>

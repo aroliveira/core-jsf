@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+   version="2.0">
+      
+   	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>		
+   		<navigation-case>
+   			<from-action>#{loginController.verifyUser}</from-action>
+   			<from-outcome>sucess</from-outcome>
+   			<to-view-id>/welcome.xhtml</to-view-id>
+   		</navigation-case>   		
+   		<navigation-case>
+   			<from-action>#{loginController.newUser}</from-action>
+   			<from-outcome>sucess</from-outcome>
+   			<to-view-id>newUser.xhtml</to-view-id>
+   		</navigation-case>   		
+   		<navigation-case>
+   			<from-outcome>newUser</from-outcome>
+   			<to-view-id>newUser.xhtml</to-view-id>
+   			<redirect/>
+   		</navigation-case>
+   	</navigation-rule>
+
+
+   	<navigation-rule>
+		<from-view-id>/login/login.xhtml</from-view-id>
+   		<navigation-case>
+   			<from-outcome>planetarium</from-outcome>
+   			<to-view-id>../planetarium/planetarium.xhtml</to-view-id>
+   			<redirect/>
+   		</navigation-case>
+   	</navigation-rule>
+
+
+   	<navigation-rule>
+   		<navigation-case>
+   			<from-outcome>fail</from-outcome>
+   			<to-view-id>/error.xhtml</to-view-id>
+   		</navigation-case>
+   	</navigation-rule>	
+   
+</faces-config>

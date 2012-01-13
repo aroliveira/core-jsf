@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Seja bem vindo ao convertable</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h1>Entre com o pagamento</h1>
+		<h:panelGrid columns="3">
+				Quantidade
+				<h:inputText id="amount" label="amount" value="#{payment.amount}">
+				<!--<f:convertNumber minFractionDigits="2" />-->
+			</h:inputText>
+			<h:message for="amount" />
+            
+            Cartão de Crédito
+            <h:inputText id="card" label="Cartão"
+				value="#{payment.card}">
+				<!--<f:validateLength minimun="13" />
+				<f:validateRequired />
+			--></h:inputText>
+			<h:message for="card" />
+            
+            Data de expiração
+            <!--<h:inputText id="date" label="expiraçao"
+				value="#{payment.date}">
+			</h:inputText>
+			--><h:message for="date" />
+			
+            Opa:
+            <h:inputText label="Opa" id="opa"
+				value="#{payment.pegaUmMad}">
+				<f:attribute name="dateFormat" value="dd/MM/yy"/>
+			</h:inputText>
+			<h:message for="opa" />
+
+		</h:panelGrid>
+
+		<h:commandButton value="GO GO GO" action="result"/>
+		<h:commandButton value="log out" action="#{userBean.logOut}"/>
+	</h:form>
+</h:body>
+</html>

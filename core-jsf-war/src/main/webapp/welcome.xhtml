@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+   <h:head>
+      <title>Welcome alterado</title>
+   </h:head>
+
+   <h:body>
+   
+     <h:outputFormat value="#{msg.welcome}">
+    	<f:param value="#{user.name}" />
+     </h:outputFormat>
+   
+   	  <h3>teste invocando o método #{user.opa('hehe')}!</h3>
+   	  
+   	  <h3>teste invocando o método já disponível #{fn:toUpperCase('anderson')}!</h3>
+   
+      <h3>Welcome to JavaServer Faces, #{user.name}!</h3>
+      
+      <h3>Welcome to JavaServer Faces, #{editBean.nome}!</h3>
+      
+      <h3>Olha, #{editBean.userBean}!</h3>
+      
+      <h2>JSF 2.0 and Resource Bundles Examples</h2>
+      <ol>
+ 
+   		<li><h:outputText value="#{msg.message}" /></li>
+    	<li><h:outputText value="#{msg['message.test1']}" /></li>
+    	<li><h:outputText value="#{msg.guessNext}" /></li>
+    	<li><h:outputText value="#{msg.answer}" /></li>    	
+	 <li>
+	     <h:outputFormat value="#{msg['message.param2']}">
+	    	<f:param value="param0" />
+	    	<f:param value="param1" />
+	     </h:outputFormat>
+	  </li>
+    	</ol>      
+      
+   </h:body>
+   
+</html>

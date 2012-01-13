@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view>
+
+	<f:event type="preRenderView" listener="#{userBean.checkLogin}"/>
+
+	<h:head>
+		<title>Seja bem vindo ao convertable</title>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			<h1>Teste de eventos</h1>
+			<h:panelGrid columns="2">
+				Street Adress <h:inputText value="#{form.streetAddress}" />
+				City <h:inputText value="#{form.city}" />
+				State <h:inputText value="#{form.state}" />
+				Countries
+			 <h:selectOneMenu value="#{form.country}" onchange="submit()"
+					imediate="true" valueChangeListener="#{form.countryChanged}">
+					<f:selectItems value="#{form.countries}" var="loc"
+						itemLabel="#{loc.displayCountry}" itemValue="#{loc.country}" />
+				</h:selectOneMenu>
+
+
+			</h:panelGrid>
+			<h:commandButton value="go go go" />
+			<h:commandButton value="log out" action="#{userBean.logOut}"/>
+		</h:form>
+	</h:body>
+</f:view>
+</html>
